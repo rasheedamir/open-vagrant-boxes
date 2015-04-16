@@ -4,6 +4,8 @@ set -ex
 # etc., and remove optional things to trim down the machine.
 apt-get -y update
 apt-get -y upgrade
+apt-get install software-properties-common
+add-apt-repository "deb http://archive.ubuntu.com/ubuntu $(lsb_release -sc) main universe"
 apt-get -y install build-essential linux-headers-$(uname -r)
 apt-get -y install vim curl
 
